@@ -1,0 +1,51 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+/**
+ * Take in n as user input then 
+ * return the nth term of the fibonacci sequence
+ * output variable to the console
+ * 
+ * @author jrosa
+ * @version 1.5
+ * @since 9/05/2021
+ */
+
+public class FibRecur
+{
+	/**
+	 * This method is used to calculate the fibonacci sequnce recursively.
+	 * @param n This is the first parameter to fibonacc method
+	 * @return int This returns the user inputted value passed through the fibonacci sequence
+	 * and outputs the value onto the console.
+	 */
+	static int fibonacc(int n)
+	{
+		if(n==0)
+		return 0;
+		if(n==1)
+		return 1;
+		else {
+			return fibonacc(n-1)+fibonacc(n-2);
+		}
+	}
+	/**
+	 * This is the main method which utilizes the fibonacc method.
+	 * @return nothing
+	 * @exception IOException on input error
+	 * @see IOException
+	 */
+	public static void main(String[] args) throws IOException
+	{
+		
+		BufferedReader x = new BufferedReader(new InputStreamReader(System.in));
+		System.out.println("---------------------------------------------------------------------");
+		System.out.println("Enter the nth term of the Fibonacci sequence you wish to calculate: ");
+		System.out.println("---------------------------------------------------------------------");
+		int n = Integer.parseInt(x.readLine());
+		System.out.println("--------------------------------------");
+		System.out.println(n+"th of the fibonacci sequence is: " + FibRecur.fibonacc(n));
+		System.out.println("--------------------------------------");
+	}	
+}
