@@ -1,0 +1,31 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+
+public class FibRecur
+{
+	static int fibonacc(int n)
+	{
+		if(n==0)
+		return 0;
+		if(n==1)
+		return 1;
+		else {
+			return fibonacc(n-1)+fibonacc(n-2);
+		}
+	}
+	
+	public static void main(String[] args) throws IOException
+	{
+		BufferedReader x = new BufferedReader(new InputStreamReader(System.in));
+		System.out.println("---------------------------------------------------------------------");
+		System.out.println("Enter the nth term of the Fibonacci sequence you wish to calculate: ");
+		System.out.println("---------------------------------------------------------------------");
+		int n = Integer.parseInt(x.readLine());
+		FibRecur a = new FibRecur();
+		System.out.println("--------------------------------------");
+		System.out.println(n+"th of the fibonacci sequence is: " + a.fibonacc(n));
+		System.out.println("--------------------------------------");
+	}	
+}
